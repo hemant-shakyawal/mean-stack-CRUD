@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { EmployeeService } from '../../shared/employee.service';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
 //import { FormGroup, FormControl, Validators } from "@angular/forms";
 
 @Component({
@@ -40,11 +40,13 @@ this.onClear();
  onSubmit(){
    if(this.EmployeeService.form.valid){
 
-
     this.EmployeeService.postemployee(this.EmployeeService.form.value).subscribe();
      //this.EmployeeService.form.reset();
     // this.EmployeeService.initializeformGroup();
     this.onClose();
+   }
+   else {
+     this.EmployeeService.updateemployee(this.EmployeeService.form.value).subscribe();
    }
 
  }

@@ -1,3 +1,10 @@
+
+
+<mat-toolbar>
+  <!-- <span>{{service.form.controls['$key'].value?"Modify Employee":"New Employee"}}</span> -->
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
 <form [formGroup]="EmployeeService.form" (ngSubmit)="onSubmit()"   class="normal-form">
   <mat-grid-list cols="2" rowHeight="300px">
     <mat-grid-tile>
@@ -42,7 +49,7 @@
 
 
     </mat-grid-list>
-    <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-list cols="2" rowHeight="100px">
 
       <div class="button-row pad-l-2p">
         <button mat-raised-button color="primary" type="submit"  [disabled]=EmployeeService.form.invalid >Submit</button>

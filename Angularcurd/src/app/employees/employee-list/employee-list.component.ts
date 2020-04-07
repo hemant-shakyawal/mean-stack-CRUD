@@ -37,6 +37,16 @@ export class EmployeeListComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.width = "60%";
     this.dialog.open(EmployeeComponent,dialogConfig);
+  }
+  onEdit(row){
+
+    this.EmployeeService.populateForm(row);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "60%";
+    dialogConfig.data=row;
+   this.dialog.open(EmployeeComponent,dialogConfig);
 
   }
 
